@@ -16,7 +16,7 @@ For the client side, HandlebarWax writes all your templates into `public/javascr
 
 2. Add it to your layout (it's important that `:handlebar_wax` be a symbol, not a string)
 
-    = javascript_include_tag 'stuff.js', 'things.js', :handlebar_wax
+    = javascript_include_tag :handlebar_wax
 
 This mostly includes `javascripts/handlebars.js` and `javascripts/handlebars_templates.js`.
 
