@@ -24,7 +24,7 @@ This mostly includes javascripts/handlebars.js and javascripts/handlebars_templa
 
     (app/views/users/_user.html.hbs)
 
-    \<h1>{{greeting}},  {{user/name}}!</h1>
+    \<h1>{{greeting}},  {{user/name}}!\</h1>
 
 4. Render views from rails.
 
