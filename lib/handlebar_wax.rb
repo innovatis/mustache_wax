@@ -1,8 +1,9 @@
 require 'handlebar_wax/template_handler'
+require 'handlebar_wax/railtie'
 require 'yajl'
 
 module HandlebarWax
-
+  
   autoload :Middleware, "handlebar_wax/middleware"
   
   def self.register_expansion(timestamp=nil)
@@ -15,18 +16,6 @@ module HandlebarWax
     }
     ActionView::Helpers::AssetTagHelper.register_javascript_expansion(expansions)
   end
-  
-  if defined?(Rails::Railtie)
-    class Railtie < Rails::Railtie
-      initializer 'handlebar_wax.initialize' do |app|
-        HandlebarWax.generate_templates
-        HandlebarWax.register_expansion
-        if Rails.env.development?
-          app.config.middleware.use HandlebarWax::Middleware
-        end 
-      end 
-    end
-  end 
   
   def self.template_files
     Dir[File.join(%w(app views), '**', '*.hbs')]
