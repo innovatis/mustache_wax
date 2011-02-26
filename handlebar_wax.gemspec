@@ -8,9 +8,9 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Burke Libbey"]
   s.email       = ["burke@burkelibbey.org"]
-  s.homepage    = ""
-  s.summary     = %q{write me later}
-  s.description = %q{write me later}
+  s.homepage    = "https://github.com/innovatis/handlebar_wax"
+  s.summary     = %q{easy reuse of mustache templates between server and client}
+  s.description = %q{MustacheWax is a gem that makes rails understand mustache templates, and exposes them all to your client side code using a simple, sane API.}
 
   s.add_runtime_dependency     'yajl-ruby'
   s.add_runtime_dependency     'rails',        '~> 3.0'
