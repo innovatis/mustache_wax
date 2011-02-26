@@ -37,13 +37,13 @@ module HandlebarWax
         %{
           js = ::HandlebarWax::TemplateHandler.js
           js['actionview'] = self
-          js.eval("Templates['#{template.identifier}']").call(assigns).force_encoding(Encoding.default_external)
+          js.eval("Templates['#{template.identifier}']").call(assigns.merge(locals)).force_encoding(Encoding.default_external)
         }
       else 
         %{
           js = ::HandlebarWax::TemplateHandler.js
           js['actionview'] = self
-          js.eval("Templates['#{template.identifier}']").call(assigns)
+          js.eval("Templates['#{template.identifier}']").call(assigns.merge(locals))
         }
       end 
     end
