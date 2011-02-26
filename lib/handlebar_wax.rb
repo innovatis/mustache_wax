@@ -40,9 +40,8 @@ module HandlebarWax
   def self.generate_templates
     templates = {}
     template_files.each do |template_file|
-      name = template_file.gsub(/^.*app\/views\//, '').gsub(/\.[^\.]+\.hbs$/, '') # todo: refactor to a String#scan
-      content = File.read(template_file)
-      templates[name] = content
+      name = template_file.scan(/app\/views\/(.*)\.[^\.]+\.hbs$/).flatten.first
+      templates[name] = File.read(template_file)
     end
 
     script = "window.HandlebarsTemplates = #{Yajl::Encoder.encode(templates)};"
