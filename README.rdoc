@@ -4,9 +4,9 @@
 
 HandlebarWax is a gem to let you easily share mustache templates between your server-side and client-side code. 
 
-On the server, HandlebarWax uses code borrowed from handlebars-rails to support `*.*.hbs` as a template type (think `foo.html.erb`, `foo.html.haml`, `foo.html.hbs`). These work pretty much exactly like you would expect they should.
+On the server, HandlebarWax uses code borrowed from handlebars-rails to support +*.*.hbs+ as a template type (think +foo.html.erb+, +foo.html.haml+, +foo.html.hbs+). These work pretty much exactly like you would expect they should.
 
-For the client side, HandlebarWax writes all your templates into `public/javascripts/handlebars_templates.js`, for you to use in your JavaScript code.
+For the client side, HandlebarWax writes all your templates into +public/javascripts/handlebars_templates.js+, for you to use in your JavaScript code.
 
 == How do I use it?
 
@@ -14,7 +14,7 @@ For the client side, HandlebarWax writes all your templates into `public/javascr
 
     gem "handlebar_wax"
 
-2. Add it to your layout (it's important that `:handlebar_wax` be a symbol, not a string)
+2. Add it to your layout (it's important that +:handlebar_wax+ be a symbol, not a string)
 
     = javascript_include_tag :handlebar_wax
 
