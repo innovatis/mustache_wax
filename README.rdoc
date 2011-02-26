@@ -18,21 +18,18 @@ For the client side, HandlebarWax writes all your templates into `public/javascr
 
     = javascript_include_tag :handlebar_wax
 
-This mostly includes `javascripts/handlebars.js` and `javascripts/handlebars_templates.js`.
-
 3. Create view files.
 
     (app/views/users/_user.html.hbs)
 
     <h1>{{greeting}},  {{user/name}}!</h1>
 
-4. Render views from rails.
+4. Render views from rails. Note that in MustacheWax, hbs templates understand both assigns and locals.
 
     - @user = User.first
     = render :partial => 'users/user', :locals => {:greeting => "Hello"}
 
-Note that in MustacheWax, hbs templates understand both assigns and locals.
-    
+   
 5. Render views from JavaScript
 
     var user = Handlebars.compile(HandlebarsTemplates['users/_user']);
