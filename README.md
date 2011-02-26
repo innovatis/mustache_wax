@@ -12,31 +12,31 @@ For the client side, HandlebarWax writes all your templates into public/javascri
 
 1. Add it to your gemfile.
 
-    gem "mustache_wax"
+`gem "mustache_wax"`
 
 2. Add it to your layout (it's important that ":handlebar_wax" be a symbol, not a string)
 
-    = javascript_include_tag 'stuff.js', 'things.js', :handlebar_wax
+`= javascript_include_tag 'stuff.js', 'things.js', :handlebar_wax`
 
 This mostly includes javascripts/handlebars.js and javascripts/handlebars_templates.js.
 
 3. Create view files.
 
-    (app/views/users/_user.html.hbs)
+`(app/views/users/_user.html.hbs)`
 
-    \<h1>{{greeting}},  {{user/name}}!\</h1>
+`\<h1>{{greeting}},  {{user/name}}!\</h1>`
 
 4. Render views from rails.
 
-    - @user = User.first
-    = render :partial => 'users/user', :locals => {:greeting => "Hello"}
+`- @user = User.first`
+`= render :partial => 'users/user', :locals => {:greeting => "Hello"}`
 
 Note that in MustacheWax, hbs templates understand both assigns and locals.
     
 5. Render views from JavaScript
 
-    var user = Handlebars.compile(HandlebarsTemplates['users/_user']);
-    user({user: {name: "Why"}}, greeting: "Frabjous Day")
+`var user = Handlebars.compile(HandlebarsTemplates['users/_user']);`
+`user({user: {name: "Why"}}, greeting: "Frabjous Day")`
 
 ## Who made this possible?
 
