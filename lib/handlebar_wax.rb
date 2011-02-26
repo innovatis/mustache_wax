@@ -1,5 +1,6 @@
 require 'handlebar_wax/template_handler'
 require 'handlebar_wax/railtie'
+require 'handlebar_was/javascript_compiler'
 require 'yajl'
 
 module HandlebarWax
@@ -26,15 +27,4 @@ module HandlebarWax
     "#{base}/public/javascripts/handlebars_templates.js"
   end 
   
-  def self.generate_templates
-    templates = {}
-    template_files.each do |template_file|
-      name = template_file.scan(/app\/views\/(.*)\.[^\.]+\.hbs$/).flatten.first
-      templates[name] = File.read(template_file)
-    end
-
-    script = "window.HandlebarsTemplates = #{Yajl::Encoder.encode(templates)};"
-
-    File.open(output_path, 'w') { |f| f.puts script }
-  end
 end

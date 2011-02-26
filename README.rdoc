@@ -12,7 +12,7 @@ For the client side, HandlebarWax writes all your templates into `public/javascr
 
 1. Add it to your gemfile.
 
-    gem "mustache_wax"
+    gem "handlebar_wax"
 
 2. Add it to your layout (it's important that `:handlebar_wax` be a symbol, not a string)
 
