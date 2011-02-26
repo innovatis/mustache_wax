@@ -1,1 +1,19 @@
-window.HandlebarsTemplates = {{templates}};
+HandlebarWax = (function() {
+
+  var templates = {{templates}};
+
+  var compiledTemplates = {};
+
+  var fun = function(templateName) {
+    if (! compiledTemplates[name]) {
+      compiledTemplates[name] = Handlebars.compile(templates[templateName]);
+    }
+    return compiledTemplates[name];
+  };
+
+  fun.templates = templates;
+  fun.compiledTemplates = templates; // I can't think of a use for this, but why not?
+
+  return fun;
+})();
+
