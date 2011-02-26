@@ -32,8 +32,7 @@ For the client side, HandlebarWax writes all your templates into +public/javascr
    
 5. Render views from JavaScript
 
-    var user = Handlebars.compile(HandlebarsTemplates['users/_user']);
-    user({user: {name: "Why"}}, greeting: "Frabjous Day")
+    HandlebarWax('users/_user', {user: {name: "Why"}, greeting: "Frabjous Day"})
 
 == Who made this possible?
 
