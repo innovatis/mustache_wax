@@ -33,7 +33,7 @@ module HandlebarWax
       templates[name] = File.read(template_file)
     end
  
-    script = File.read(File.join(File.dirname(__FILE__), 'lib', 'templates', 'handlebars_templates.js.hbs'))
+    script = File.read(File.join(File.dirname(__FILE__), 'handlebar_wax', 'templates', 'handlebars_templates.js.hbs'))
     script.sub!("{{templates}}", Yajl::Encoder.encode(templates)) # How ironic is this?
  
     File.open(output_path, 'w') { |f| f.puts script }
