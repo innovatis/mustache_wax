@@ -4,11 +4,15 @@ HandlebarWax = (function() {
 
   var compiledTemplates = {};
 
-  var fun = function(templateName) {
+  var fun = function(templateName, params) {
     if (! compiledTemplates[name]) {
       compiledTemplates[name] = Handlebars.compile(templates[templateName]);
     }
-    return compiledTemplates[name];
+    if (typeof params == "undefined") {
+      return compiledTemplates[name];
+    } else {
+      return compiledTemplates[name](params);
+    }
   };
 
   fun.templates = templates;
