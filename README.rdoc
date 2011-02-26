@@ -37,8 +37,8 @@ For the client side, HandlebarWax writes all your templates into +public/javascr
 == Who made this possible?
 
 * Steven Soroka (ssoroka) for pub-based discussion about this, and initial mustache_wax code
-* Jamesarosen for handlebars-rails, which this project includes in its entirety, with very few modifications as of yet.
-* Yehuda Katz (wycats) for the wonderful Handlebars.js.
+* Yehuda Katz and Jamesarosen for handlebars-rails, which this project includes in its entirety, with very few modifications as of yet.
+* Yehuda Katz (yes, twice) for the wonderful Handlebars.js.
 
 == I want to help / I have an idea.
 
