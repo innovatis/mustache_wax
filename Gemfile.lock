@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    handlebar_wax (0.0.1)
+    handlebar_wax (0.0.4)
       rails (~> 3.0)
       therubyracer (~> 0.8.0)
       yajl-ruby
