@@ -5,13 +5,13 @@ HandlebarWax = (function() {
   var compiledTemplates = {};
 
   var fun = function(templateName, params) {
-    if (! compiledTemplates[name]) {
-      compiledTemplates[name] = Handlebars.compile(templates[templateName]);
+    if (! compiledTemplates[templateName]) {
+      compiledTemplates[templateName] = Handlebars.compile(templates[templateName]);
     }
     if (typeof params == "undefined") {
-      return compiledTemplates[name];
+      return compiledTemplates[templateName];
     } else {
-      return compiledTemplates[name](params);
+      return compiledTemplates[templateName](params);
     }
   };
 
