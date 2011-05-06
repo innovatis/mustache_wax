@@ -12,10 +12,6 @@ module HandlebarWax
       
       if mtimes.any? && (newest = mtimes.max) > @newest
         HandlebarWax.generate_templates
-        @newest = newest
-        
-        # kill caching of old versions.
-        HandlebarWax.register_expansion(@newest)
       end 
       
       @app.call(env)
