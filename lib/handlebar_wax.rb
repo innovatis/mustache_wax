@@ -1,5 +1,6 @@
 require 'handlebar_wax/template_handler'
 require 'handlebar_wax/railtie'
+require 'handlebar_wax/engine'
 require 'yajl'
 
 module HandlebarWax
