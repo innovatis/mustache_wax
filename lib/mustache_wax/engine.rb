@@ -1,4 +1,4 @@
-module HandlebarWax
+module MustacheWax
   class Engine < Rails::Engine
 
   end
