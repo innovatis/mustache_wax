@@ -1,12 +1,12 @@
 MustacheWax = (function() {
 
-  var templates = {{templates}};
+  var templates = {{{templates}}};
 
   var fun = function(templateName, params) {
     if (typeof params == "undefined") {
       return templates[templateName];
     } else {
-      return templates[templateName](params);
+      return Mustache.to_html(templates[templateName], params);
     }
   };
 
