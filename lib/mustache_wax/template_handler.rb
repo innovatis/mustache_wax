@@ -1,13 +1,14 @@
 require 'active_support'
-require 'pry'
 
 module MustacheWax
   class TemplateHandler
     def call(template)
-      binding.pry
-      Mustache.render(template.source, assigns.merge(local_assigns))
+      Mustache.render(template.source, template.locals)
     end
-    # def render
+
+    def render(template, local_assigns)
+      Mustache.render(template.source, local_assigns)
+    end 
   end
 end
 
