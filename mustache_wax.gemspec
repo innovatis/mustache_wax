@@ -14,7 +14,8 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency     'yajl-ruby'
   s.add_runtime_dependency     'rails',        '~> 3.0'
-
+  s.add_runtime_dependency     'mustache'
+  
   s.add_development_dependency 'rspec',        '~> 2.1.0'
   s.add_development_dependency 'rcov',         '>= 0'
   s.add_development_dependency 'fakefs'
