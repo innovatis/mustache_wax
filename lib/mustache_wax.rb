@@ -22,7 +22,7 @@ module MustacheWax
       templates[name] = File.read(template_file)
     end
  
-    tpl = File.read(File.join(File.dirname(__FILE__), 'mustache_wax', 'templates', 'mustaches_templates.js.mustache'))
+    tpl = File.read(File.join(File.dirname(__FILE__), 'mustache_wax', 'templates', 'mustache_templates.js.mustache'))
     
     Mustache.render(tpl, {:templates => ActiveSupport::JSON.encode(templates)})
   end
