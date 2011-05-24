@@ -1,13 +1,16 @@
 require 'active_support'
+require 'pry'
 
 module MustacheWax
   class TemplateHandler
-    def self.call(template)
+    def call(template)
+      binding.pry
       Mustache.render(template.source, assigns.merge(local_assigns))
-    end 
+    end
+    # def render
   end
 end
 
 ActiveSupport.on_load(:action_view) do
-  ActionView::Template.register_template_handler(:mustache, ::MustacheWax::TemplateHandler)
+  ActionView::Template.register_template_handler(:mustache, ::MustacheWax::TemplateHandler.new)
 end
