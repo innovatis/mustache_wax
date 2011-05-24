@@ -1,7 +1,8 @@
 require 'active_support/json'
+require 'mustache'
 
-require 'mustache_wax/template_handler'
 require 'mustache_wax/engine'
+require 'mustache_wax/template_handler'
 
 module MustacheWax
   
@@ -9,15 +10,10 @@ module MustacheWax
     Dir[File.join(%w(app views), '**', '*.mustache')]
   end 
 
-  def self.output_path
-    assets = File.join(File.dirname(__FILE__),'..','app','assets')
-    "#{assets}/javascripts/mustaches_templates.js"
-  end 
-  
   def self.templates_for_javascript
     templates = {}
     template_files.each do |template_file|
-      # TODO : Scan all view directories
+      # TODO : Scan ALL view directories
       name = template_file.scan(/app\/views\/(.*)\.[^\.]+\.mustache$/).flatten.first
       templates[name] = File.read(template_file)
     end

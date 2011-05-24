@@ -1,23 +1,16 @@
-HandlebarWax = (function() {
+MustacheWax = (function() {
 
   var templates = {{templates}};
 
-  var compiledTemplates = {};
-
   var fun = function(templateName, params) {
-    if (! compiledTemplates[templateName]) {
-      compiledTemplates[templateName] = Handlebars.compile(templates[templateName]);
-    }
     if (typeof params == "undefined") {
-      return compiledTemplates[templateName];
+      return templates[templateName];
     } else {
-      return compiledTemplates[templateName](params);
+      return templates[templateName](params);
     }
   };
 
   fun.templates = templates;
-  fun.compiledTemplates = templates; // I can't think of a use for this, but why not?
 
   return fun;
 })();
-
