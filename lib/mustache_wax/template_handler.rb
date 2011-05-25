@@ -3,7 +3,7 @@ require 'active_support'
 module MustacheWax
   class TemplateHandler
     def call(template)
-      Mustache.render(template.source, template.locals)
+      "Mustache.render(#{template.source.inspect}, local_assigns).html_safe"
     end
 
     def render(template, local_assigns)
